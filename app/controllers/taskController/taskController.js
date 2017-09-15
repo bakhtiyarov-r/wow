@@ -6,8 +6,8 @@ module.exports = function(app) {
     });
 
     $scope.getCount = function(val){
-    	
-      return filterFilter( $scope.myData, {status: {new: true}}).length;
+    	   
+      return filterFilter( $scope.myData, {status: val}).length;
       
     }
     

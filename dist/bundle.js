@@ -35250,8 +35250,8 @@ module.exports = function(app) {
     });
 
     $scope.getCount = function(val){
-    	
-      return filterFilter( $scope.myData, {status: {val: true}}).length;
+    	   
+      return filterFilter( $scope.myData, {status: val}).length;
       
     }
     

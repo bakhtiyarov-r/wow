@@ -10,12 +10,12 @@
 	  <div class="row divider">
 	  	<div class="col-lg-10">
 	  	<div class="status">
-	  		<span class="status_item" ng-click="myFilter = {new: true}" href="#" >Новые <span class="status_count" >&nbsp; {{getCount("new")}}&nbsp;</span></span>
-		    <span class="status_item" ng-click="myFilter = {onthe_go: true}" href="#">В работе <span class="status_count">&nbsp;{{getCount("onthe_go")}}&nbsp;</span></span>
-		    <span class="status_item" ng-click="myFilter = {under_consideration: true}" href="#">На рассмотрении <span class="status_count">&nbsp;{{getCount("under_consideration")}}&nbsp;</span></span>
-		    <span class="status_item" ng-click="myFilter = {done: true}" href="#">Выполнены <span class="status_count">&nbsp;{{getCount("done")}}&nbsp;</span></span>
-		    <span class="status_item" ng-click="myFilter = {canceled: true}" href="#">Отменены <span class="status_count">&nbsp;{{getCount("canceled")}}&nbsp;</span></span>
-		    <span class="status_item" ng-click="myFilter = {drafts: true}" href="#">Черновики <span class="status_count">&nbsp;{{getCount("drafts")}}&nbsp;</span></span>
+	  		<span class="status_item" ng-click="myFilter = {new: true}" href="#" >Новые <span class="status_count" >&nbsp; {{getCount({new: true})}}&nbsp;</span></span>
+		    <span class="status_item" ng-click="myFilter = {onthe_go: true}" href="#">В работе <span class="status_count">&nbsp;{{getCount({onthe_go: true})}}&nbsp;</span></span>
+		    <span class="status_item" ng-click="myFilter = {under_consideration: true}" href="#">На рассмотрении <span class="status_count">&nbsp;{{getCount({under_consideration: true})}}&nbsp;</span></span>
+		    <span class="status_item" ng-click="myFilter = {done: true}" href="#">Выполнены <span class="status_count">&nbsp;{{getCount({done: true})}}&nbsp;</span></span>
+		    <span class="status_item" ng-click="myFilter = {canceled: true}" href="#">Отменены <span class="status_count">&nbsp;{{getCount({canceled: true})}}&nbsp;</span></span>
+		    <span class="status_item" ng-click="myFilter = {drafts: true}" href="#">Черновики <span class="status_count">&nbsp;{{getCount({drafts: true})}}&nbsp;</span></span>
 		</div>
 		</div>
 		<div class="col-lg-2">
