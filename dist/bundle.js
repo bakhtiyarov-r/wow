@@ -35234,13 +35234,19 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
 module.exports = function(app) {
    __webpack_require__(6)(app);
 };
 
 /***/ }),
 /* 6 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 module.exports = function(app) {
    app.controller('taskController', function($scope, filterFilter, $http) {
@@ -35266,13 +35272,19 @@ module.exports = function(app) {
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
 module.exports = function(app) {
    __webpack_require__(8)(app);
 };
 
 /***/ }),
 /* 8 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 module.exports = function(app) {
    app.controller('navController', function($scope, $route) {
@@ -35286,13 +35298,19 @@ module.exports = function(app) {
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
+"use strict";
+
+
 module.exports = function(app) {
 	__webpack_require__(10)(app);
 };
 
 /***/ }),
 /* 10 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 module.exports = function(app) {
     app.config(function($routeProvider){
@@ -35331,4 +35349,3 @@ module.exports = function(app) {
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=bundle.js.map

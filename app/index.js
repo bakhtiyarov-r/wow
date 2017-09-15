@@ -1,4 +1,4 @@
-"use strict"
+"use strict";
 
 var angular = require('angular');
 var angularRoute = require('angular-route');
