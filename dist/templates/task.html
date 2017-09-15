@@ -1,0 +1,73 @@
+	<section>
+	<div class="container">
+	  <div class="row">
+	  	<div class="col-lg-1">
+	  	<div class="title">
+	  	  <h2 >Задания</h2>
+	  	</div>
+	  	</div>
+	  </div>
+	  <div class="row divider">
+	  	<div class="col-lg-10">
+	  	<div class="status">
+	  		<span class="status_item" ng-click="myFilter = {new: true}" href="#" >Новые <span class="status_count" >&nbsp; {{getCount("new")}}&nbsp;</span></span>
+		    <span class="status_item" ng-click="myFilter = {onthe_go: true}" href="#">В работе <span class="status_count">&nbsp;{{getCount("onthe_go")}}&nbsp;</span></span>
+		    <span class="status_item" ng-click="myFilter = {under_consideration: true}" href="#">На рассмотрении <span class="status_count">&nbsp;{{getCount("under_consideration")}}&nbsp;</span></span>
+		    <span class="status_item" ng-click="myFilter = {done: true}" href="#">Выполнены <span class="status_count">&nbsp;{{getCount("done")}}&nbsp;</span></span>
+		    <span class="status_item" ng-click="myFilter = {canceled: true}" href="#">Отменены <span class="status_count">&nbsp;{{getCount("canceled")}}&nbsp;</span></span>
+		    <span class="status_item" ng-click="myFilter = {drafts: true}" href="#">Черновики <span class="status_count">&nbsp;{{getCount("drafts")}}&nbsp;</span></span>
+		</div>
+		</div>
+		<div class="col-lg-2">
+			<div class="status_add"><a href="#"></a></div>
+		</div>
+	  </div>	
+	</div>		
+	</section>
+	<section>
+	   <div class="container filter">
+	      <div class="row">
+	         <div class="col-lg-3">
+	            <div class="filter_search">
+	         	<input type="text" name="" ng-model="search" placeholder="Поиск по слову">
+	         	</div>
+	         </div>
+	         <div class="col-lg-6">
+	            <div class="filter_checkbox">
+	            <input type="checkbox" hidden ng-model="val" /><label> Персональное</label>
+	            <input type="checkbox" hidden ng-model="val1"/><label> Ночное</label>
+	            <input type="checkbox" hidden ng-model="val2"/><label> Срочное</label>	            
+	            </div>     	
+	            <div class="filter_name">
+				  <a href="#" >Никита Ласточкин&nbsp;&nbsp;</a>
+			    </div>
+	         </div>  	
+	      </div>  	
+	   </div>	
+	</section>
+
+	<section>
+		<div class="container tasks">
+			<table class="table tasks_item">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th >Город</th>
+                    <th>Название</th>
+                    <th>Выполнить до</th>
+                    <th>Сумма</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="data in myData | filter: {status:myFilter, task_name:search, filter:{personal:val || NULL, night:val1 || NULL, immediate:val2 || NULL}}">
+                    <td >{{ data.ID }}</td>
+                    <td >{{ data.city_name }}</td>
+                    <td width="50%">{{ data.task_name }} </td>
+                    <td>{{ data.deadline }}</td>
+                    <td>{{ data.sum }}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+		</div>
+	</section>
