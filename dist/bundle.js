@@ -72,12 +72,13 @@
 
 var angular = __webpack_require__(1);
 var angularRoute = __webpack_require__(3);
+var css = __webpack_require__(5);
 
 var app = angular.module('wowApp', ['ngRoute']);
 
-__webpack_require__(5)(app);
-__webpack_require__(7)(app);
-__webpack_require__(9)(app);
+__webpack_require__(6)(app);
+__webpack_require__(8)(app);
+__webpack_require__(10)(app);
 
 
 
@@ -35232,17 +35233,23 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function(app) {
-   __webpack_require__(6)(app);
+   __webpack_require__(7)(app);
 };
 
 /***/ }),
-/* 6 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35269,18 +35276,18 @@ module.exports = function(app) {
 
 
 /***/ }),
-/* 7 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function(app) {
-   __webpack_require__(8)(app);
+   __webpack_require__(9)(app);
 };
 
 /***/ }),
-/* 8 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -35295,18 +35302,18 @@ module.exports = function(app) {
 
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function(app) {
-	__webpack_require__(10)(app);
+	__webpack_require__(11)(app);
 };
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";

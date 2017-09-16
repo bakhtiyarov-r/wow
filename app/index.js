@@ -2,6 +2,8 @@
 
 var angular = require('angular');
 var angularRoute = require('angular-route');
+var css = require('./style/main.css');
+
 
 var app = angular.module('wowApp', ['ngRoute']);
 
