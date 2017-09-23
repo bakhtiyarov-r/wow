@@ -74,11 +74,17 @@ var angular = __webpack_require__(1);
 var angularRoute = __webpack_require__(3);
 var css = __webpack_require__(5);
 
+
 var app = angular.module('wowApp', ['ngRoute']);
 
+
 __webpack_require__(6)(app);
-__webpack_require__(8)(app);
 __webpack_require__(10)(app);
+__webpack_require__(12)(app);
+__webpack_require__(14)(app);
+__webpack_require__(16)(app);
+__webpack_require__(18)(app);
+__webpack_require__(20)(app);
 
 
 
@@ -8397,7 +8403,7 @@ function $CompileProvider($provide, $$sanitizeUriProvider) {
    *   });
    *
    *   myMod.component('myComp', {
-   *     templateUrl: 'views/my-comp.html',
+   *     template: require('./views/my-comp.html'),
    *     controller: 'MyCtrl',
    *     controllerAs: 'ctrl',
    *     bindings: {name: '@'}
@@ -34485,7 +34491,7 @@ function $RouteProvider() {
      *     .config(function($routeProvider, $locationProvider) {
      *       $routeProvider
      *        .when('/Book/:bookId', {
-     *         templateUrl: 'book.html',
+     *         template: require('./book.html'),
      *         controller: 'BookController',
      *         resolve: {
      *           // I will cause a 1 second delay
@@ -34497,7 +34503,7 @@ function $RouteProvider() {
      *         }
      *       })
      *       .when('/Book/:bookId/ch/:chapterId', {
-     *         templateUrl: 'chapter.html',
+     *         template: require('./chapter.html'),
      *         controller: 'ChapterController'
      *       });
      *
@@ -35066,12 +35072,12 @@ ngRouteModule.directive('ngView', ngViewFillContentFactory);
             function($routeProvider, $locationProvider) {
               $routeProvider
                 .when('/Book/:bookId', {
-                  templateUrl: 'book.html',
+                  template: require('./book.html'),
                   controller: 'BookCtrl',
                   controllerAs: 'book'
                 })
                 .when('/Book/:bookId/ch/:chapterId', {
-                  templateUrl: 'chapter.html',
+                  template: require('./chapter.html'),
                   controller: 'ChapterCtrl',
                   controllerAs: 'chapter'
                 });
@@ -35244,62 +35250,29 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 "use strict";
 
 
-module.exports = function(app) {
-   __webpack_require__(7)(app);
-};
+module.exports = function(app){
+	app.component('navComponent', {
+	template: __webpack_require__(7)
+	})
+}
 
 /***/ }),
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-module.exports = function(app) {
-   app.controller('taskController', function($scope, filterFilter, $http) {
-    $http.get('task.json').then(function(response) {
-        $scope.myData = response.data.task;
-        console.log($scope.myData);
-    });
-
-    $scope.getCount = function(val){
-    	   
-      return filterFilter( $scope.myData, {status: val}).length;
-      
-    }
-    
-    
-    
-  });
-};
-
-
+module.exports = "<header>\r\n\t<div class=\"container header\">\r\n\t<div class=\"row\">\r\n\t<div class=\"col-lg-7\">\r\n\t    <div class=\"logo\">\r\n\t       <a href=\"#\">taskon</a>\r\n\t    </div>\r\n\t    <div class=\"menu\">\t\t\r\n\t\t<a class=\"menu_item\" ng-class=\"{menu_item__active: $route.current.activetab == 'task'}\" href=\"#!/\">Задания</a>\r\n\t\t<a class=\"menu_item\" ng-class=\"{menu_item__active: $route.current.activetab == 'finance'}\" href=\"#!/finance\">Финансы</a>\r\n\t\t<a class=\"menu_item\" ng-class=\"{menu_item__active: $route.current.activetab == 'company'}\" href=\"#!/company\">Компания</a>\r\n\t\t<a class=\"menu_item\" ng-class=\"{menu_item__active: $route.current.activetab == 'statistic'}\" href=\"#!/statistic\">Статистика</a>\r\n\t\t</div>\t\r\n    </div>\r\n    <div class=\"col-lg-5\">\r\n\t    <div class=\"user\">\r\n\t\t\t<div class=\"user_balance\">\r\n\t\t\t   <span>Баланс</span>&nbsp;&nbsp;\r\n\t\t\t   <a href=\"#!/balance\">218 982, 90 </a>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"user_notification\">\r\n\t\t\t\t<a href=\"#\"><img src=\"" + __webpack_require__(8) + "\"></a>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"user_name\">\r\n\t\t\t\t<a href=\"#\">Никита Ласточкин&nbsp;&nbsp;</a>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"user_help\">\r\n\t\t\t\t<a href=\"#\"><img src=\"" + __webpack_require__(9) + "\"></a>\r\n\t\t\t</div>\t\t\t       \r\n\t    </div>\t\r\n\t</div>\r\n\t</div>\r\n\t</div>\r\n\t</header>\r\n\t<div ng-view></div>";
 
 /***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-module.exports = function(app) {
-   __webpack_require__(9)(app);
-};
+module.exports = __webpack_require__.p + "assets/ic-notifications-black-24-px.png";
 
 /***/ }),
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-module.exports = function(app) {
-   app.controller('navController', function($scope, $route) {
-    $scope.$route = $route;
-   });
-};
-
-
+module.exports = __webpack_require__.p + "assets/ic-help-outline-24-px-copy-3.png";
 
 /***/ }),
 /* 10 */
@@ -35308,50 +35281,149 @@ module.exports = function(app) {
 "use strict";
 
 
-module.exports = function(app) {
-	__webpack_require__(11)(app);
-};
+module.exports = function(app){
+	app.component('taskComponent', {
+	template: __webpack_require__(11),
+	controller: function($scope, filterFilter, $http) {
+       $http.get('task.json').then(function(response) {
+         $scope.myData = response.data.task;
+         
+       });
+
+      $scope.getCount = function(val){   
+        return filterFilter( $scope.myData, {status: val}).length;
+      
+      }
+    
+     }
+  })
+}
 
 /***/ }),
 /* 11 */
+/***/ (function(module, exports) {
+
+module.exports = "\t<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"title\">\r\n\t  \t  <h2 >Задания</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  <div class=\"row divider\">\r\n\t  \t<div class=\"col-lg-10\">\r\n\t  \t<div class=\"status\">\r\n\t  \t\t<span class=\"status_item\" ng-click=\"myFilter = {new: true}\" href=\"#\" >Новые <span class=\"status_count\" >&nbsp; {{getCount({new: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"status_item\" ng-click=\"myFilter = {onthe_go: true}\" href=\"#\">В работе <span class=\"status_count\">&nbsp;{{getCount({onthe_go: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"status_item\" ng-click=\"myFilter = {under_consideration: true}\" href=\"#\">На рассмотрении <span class=\"status_count\">&nbsp;{{getCount({under_consideration: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"status_item\" ng-click=\"myFilter = {done: true}\" href=\"#\">Выполнены <span class=\"status_count\">&nbsp;{{getCount({done: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"status_item\" ng-click=\"myFilter = {canceled: true}\" href=\"#\">Отменены <span class=\"status_count\">&nbsp;{{getCount({canceled: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"status_item\" ng-click=\"myFilter = {drafts: true}\" href=\"#\">Черновики <span class=\"status_count\">&nbsp;{{getCount({drafts: true})}}&nbsp;</span></span>\r\n\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"col-lg-2\">\r\n\t\t\t<div class=\"status_add\"><a href=\"#\"></a></div>\r\n\t\t</div>\r\n\t  </div>\t\r\n\t</div>\t\t\r\n\t</section>\r\n\t<section>\r\n\t   <div class=\"container filter\">\r\n\t      <div class=\"row\">\r\n\t         <div class=\"col-lg-3\">\r\n\t            <div class=\"filter_search\">\r\n\t         \t<input type=\"text\" name=\"\" ng-model=\"search\" placeholder=\"Поиск по слову\">\r\n\t         \t</div>\r\n\t         </div>\r\n\t         <div class=\"col-lg-6\">\r\n\t            <div class=\"filter_checkbox\">\r\n\t            <input type=\"checkbox\" hidden ng-model=\"val\" /><label> Персональное</label>\r\n\t            <input type=\"checkbox\" hidden ng-model=\"val1\"/><label> Ночное</label>\r\n\t            <input type=\"checkbox\" hidden ng-model=\"val2\"/><label> Срочное</label>\t            \r\n\t            </div>     \t\r\n\t            <div class=\"filter_name\">\r\n\t\t\t\t  <a href=\"#\" >Никита Ласточкин&nbsp;&nbsp;</a>\r\n\t\t\t    </div>\r\n\t         </div>  \t\r\n\t      </div>  \t\r\n\t   </div>\t\r\n\t</section>\r\n\r\n\t<section>\r\n\t\t<div class=\"container tasks\">\r\n\t\t\t<table class=\"table tasks_item\">\r\n            <thead>\r\n                <tr>\r\n                    <th>ID</th>\r\n                    <th >Город</th>\r\n                    <th>Название</th>\r\n                    <th>Выполнить до</th>\r\n                    <th>Сумма</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr ng-repeat=\"data in myData | filter: {status:myFilter, task_name:search, filter:{personal:val || NULL, night:val1 || NULL, immediate:val2 || NULL}}\">\r\n                    <td >{{ data.ID }}</td>\r\n                    <td >{{ data.city_name }}</td>\r\n                    <td width=\"50%\">{{ data.task_name }} </td>\r\n                    <td>{{ data.deadline }}</td>\r\n                    <td>{{ data.sum }}</td>\r\n                </tr>\r\n                \r\n            </tbody>\r\n        </table>\r\n\t\t</div>\r\n\t</section>\r\n";
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(app){
+	app.component('balanceComponent', {
+	template: __webpack_require__(13)
+  })
+}
+
+/***/ }),
+/* 13 */
+/***/ (function(module, exports) {
+
+module.exports = "<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"title\">\r\n\t  \t  <h2 >Баланс</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  \r\n\t</section>";
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(app){
+	app.component('companyComponent', {
+	template: __webpack_require__(15)
+  })
+}
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+module.exports = "<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"title\">\r\n\t  \t  <h2 >Компания</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  \r\n\t</section>";
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(app){
+	app.component('financeComponent', {
+	template: __webpack_require__(17)
+  })
+}
+
+/***/ }),
+/* 17 */
+/***/ (function(module, exports) {
+
+module.exports = "<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"title\">\r\n\t  \t  <h2 >Финансы</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  \r\n\t</section>";
+
+/***/ }),
+/* 18 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(app){
+	app.component('statisticComponent', {
+	template: __webpack_require__(19)
+  })
+}
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports) {
+
+module.exports = "<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"title\">\r\n\t  \t  <h2 >Статистика</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  \r\n\t</section>";
+
+/***/ }),
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 module.exports = function(app) {
-    app.config(function($routeProvider){
+	__webpack_require__(21)(app);
+};
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = function(app) {
+    app.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+      $locationProvider.hashPrefix('!');
+
     	$routeProvider
     	   .when('/', {
-    	   	   templateUrl: 'templates/task.html',
-               controller: "navController",
-               activetab: 'task'
+    	   	   template: '<task-component></task-component>'
     	   })
     	   .when('/finance', {
-    	   	   templateUrl: 'templates/finance.html',
-               controller: "navController",
-               activetab: 'finance'
+    	   	   template: '<finance-component></finance-component>'
     	   })
     	   .when('/company', {
-    	   	   templateUrl: 'templates/company.html',
-               controller: "navController",
-               activetab: 'company'
+    	   	   template: '<company-component></company-component>'
     	   })
     	   .when('/statistic', {
-    	   	   templateUrl: 'templates/statistic.html',
-               controller: "navController",
-               activetab: 'statistic'
+    	   	   template: '<statistic-component></statistic-component>'
     	   })
     	   .when('/balance', {
-    	   	   templateUrl: 'templates/balance.html',
-               controller: "navController",
-               activetab: 'balance'
+    	   	   template: '<balance-component></balance-component>'
     	   })
-    	   .otherwise({
-    	   	  redirectTo:'/'
-    	   })
+    	   .otherwise('/');
 
-    })
+    }
+  ])
 };
 
 /***/ })

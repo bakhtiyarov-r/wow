@@ -1,36 +1,28 @@
 "use strict";
 
 module.exports = function(app) {
-    app.config(function($routeProvider){
+    app.config(['$locationProvider', '$routeProvider',
+    function config($locationProvider, $routeProvider) {
+      $locationProvider.hashPrefix('!');
+
     	$routeProvider
     	   .when('/', {
-    	   	   templateUrl: 'templates/task.html',
-               controller: "navController",
-               activetab: 'task'
+    	   	   template: '<task-component></task-component>'
     	   })
     	   .when('/finance', {
-    	   	   templateUrl: 'templates/finance.html',
-               controller: "navController",
-               activetab: 'finance'
+    	   	   template: '<finance-component></finance-component>'
     	   })
     	   .when('/company', {
-    	   	   templateUrl: 'templates/company.html',
-               controller: "navController",
-               activetab: 'company'
+    	   	   template: '<company-component></company-component>'
     	   })
     	   .when('/statistic', {
-    	   	   templateUrl: 'templates/statistic.html',
-               controller: "navController",
-               activetab: 'statistic'
+    	   	   template: '<statistic-component></statistic-component>'
     	   })
     	   .when('/balance', {
-    	   	   templateUrl: 'templates/balance.html',
-               controller: "navController",
-               activetab: 'balance'
+    	   	   template: '<balance-component></balance-component>'
     	   })
-    	   .otherwise({
-    	   	  redirectTo:'/'
-    	   })
+    	   .otherwise('/');
 
-    })
+    }
+  ])
 };
