@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = function(app) {
+export default function Router(app) {
     app.config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
       $locationProvider.hashPrefix('!');

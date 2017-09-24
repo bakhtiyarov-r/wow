@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = function(app){
+export default function Statistic(app){
 	app.component('statisticComponent', {
 	templateUrl: './statistic.html'
   })

@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = function(app){
+export default function Finance(app){
 	app.component('financeComponent', {
 	templateUrl: './finance.html'
   })

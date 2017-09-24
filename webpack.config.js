@@ -15,8 +15,8 @@ module.exports = {
    module: {
     rules: [
       {
-      test: /\.js$/,
-      use: ['angularjs-template-loader']
+        test: /\.js$/,
+        use: ['babel-loader?presets[]=es2015', 'angularjs-template-loader']
      
       },
       {
@@ -31,8 +31,8 @@ module.exports = {
         loader: 'html-loader'
       },
       {
-      test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
-      loader: 'file-loader?name=[path][name].[ext]'
+        test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/,
+        loader: 'file-loader?name=[path][name].[ext]'
       }
 
   
@@ -45,8 +45,7 @@ module.exports = {
   plugins: [
      new ExtractTextPlugin('./css/styles.css'),
 
-     new HtmlWebpackPlugin({template: 'index.html'
-    })
+     new HtmlWebpackPlugin({template: 'index.html'})
   ]
 
 };

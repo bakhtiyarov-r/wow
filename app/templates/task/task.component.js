@@ -1,6 +1,6 @@
 "use strict";
 
-module.exports = function(app){
+export default function Task(app){
 	app.component('taskComponent', {
 	templateUrl: './task.html',
 	controller: function($scope, $http, filterFilter) {
