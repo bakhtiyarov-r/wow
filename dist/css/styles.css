@@ -3,18 +3,18 @@
 body {
 	margin: 0px;
 }
-.header{
+.nav__header___27Vuu{
 	
 	
 	margin: auto;
 	background: #222222;
 }
 
-.menu {
+.nav__menu___20IwW {
 	display: inline-block;
 }
 
-.logo {
+.nav__logo___EjnXn {
 	width: 75px;
     margin-left: 40px;
     margin-right: 35px;
@@ -24,7 +24,7 @@ body {
     float: left;
 }
 
-.logo a {
+.nav__logo___EjnXn a {
 	font-family: "PT Sans";
     text-decoration: none;
 	font-size: 24px;
@@ -32,7 +32,7 @@ body {
 	letter-spacing: 1px;
 }
 
-.menu_item {
+.nav__menu_item___redDU {
 	display: inline-block;
     vertical-align: middle;
     margin-right: 35px;
@@ -44,21 +44,21 @@ body {
     transition: all .3s;
 }
 
-.menu_item:hover {
+.nav__menu_item___redDU:hover {
 	color: #ff6633;
 	text-decoration: none;
 }
 
-.menu_item:focus {
+.nav__menu_item___redDU:focus {
     text-decoration: none;
     color: #ffffff;
 }
 
-.menu_item__active{
+.nav__menu_item__active___2ZlrU{
 	color: #ffffff;
 }
 
-.user {
+.nav__user___2DQpI {
 	
 	display: inline-block;
 	width: 455px;
@@ -67,7 +67,7 @@ body {
 
 }
 
-.user_balance {
+.nav__user_balance___1-DvY {
 	color: #999999;
     font-family: "PT Sans";
     text-decoration: none;
@@ -75,16 +75,16 @@ body {
     float: left;
 }
 
-.user_balance a {
+.nav__user_balance___1-DvY a {
 	color: #ffffff;
     font-family: "PT Sans";
     text-decoration: none;
     font-size: 16px;
 }
 
-.user_balance a:after { content:'\20BD'; }
+.nav__user_balance___1-DvY a:after { content:'\20BD'; }
 
-.user_notification {
+.nav__user_notification___142Pq {
 	float: left;
 	margin: 0px 15px 0 20px;
 	vertical-align: middle;
@@ -92,7 +92,7 @@ body {
 	
 }
 
-.user_notification::after {
+.nav__user_notification___142Pq::after {
 	content: "\25CF";
       font-size: 12px; 
       color: #ff6633;
@@ -100,7 +100,7 @@ body {
     top: -7px;
     left: -10px;
 }
-.user_name {
+.nav__user_name___2KXT- {
 	color: #999999;
     font-family: "PT Sans";
     text-decoration: none;
@@ -108,7 +108,7 @@ body {
     float: left;
 }
 
-.user_name a {
+.nav__user_name___2KXT- a {
 	color: #ffffff;
     font-family: "PT Sans";
     text-decoration: none;
@@ -116,18 +116,18 @@ body {
 
 }
 
-.user_name a::after {
+.nav__user_name___2KXT- a::after {
 	content: "\25BE";
       font-size: 16px; 
       color: #999999;
      transition: all .3s;
 }
 
-.user_name a:hover::after {
+.nav__user_name___2KXT- a:hover::after {
 	color: #ff6633;
 }
 
-.user_help {
+.nav__user_help___1ts53 {
 	float: left;
 	margin: 0px 25px 0 20px;
 	vertical-align: middle;
@@ -135,7 +135,9 @@ body {
 	
 }
 
-.title {
+
+
+.task__title___2DVvj {
 	margin-top: 10px;
     margin-left: 40px;    
     display: inline-block;    
@@ -144,12 +146,12 @@ body {
 	color: #222222;	
 }
 
-.status {
+.task__status___1Rf39 {
 	margin-left: 40px;
 	
 }
 
-.status_item {
+.task__status_item___exk0z {
 	position: relative;
 	display: inline-block;
     vertical-align: middle;
@@ -164,11 +166,11 @@ body {
 
 }
 
-.status_item:hover {
+.task__status_item___exk0z:hover {
 	text-decoration: none;
 	color: #999999;
 }
-.status_item::after {
+.task__status_item___exk0z::after {
     content: '';
     position: absolute;
     left: 0;
@@ -179,7 +181,7 @@ body {
     -webkit-transition: all 0.25s ease;
     transition: all 0.25s ease;
 }
-.status_item:hover::after {
+.task__status_item___exk0z:hover::after {
 	text-decoration: none;
 	opacity: 1;
     bottom: -21px;
@@ -189,7 +191,7 @@ body {
 }
 
 
-.status_count{
+.task__status_count___1rKag{
 	color: #999999;
 	border: 1px solid #dddddd;	
 	border-radius: 50px;
@@ -201,11 +203,11 @@ body {
 	
 }
 
-.divider {
+.task__divider___1gx1p {
 	 border-bottom: 1px solid #dddddd;
 }
 
-.status_add {
+.task__status_add___ebHFh {
 	position: relative;
     top: 28px;
     margin-left: auto;
@@ -223,7 +225,7 @@ body {
     
 }
 
-.status_add a:before {
+.task__status_add___ebHFh a:before {
 	content: "+";
 	color: #ffffff;
 	text-decoration: none;
@@ -231,20 +233,20 @@ body {
 
 }
 
-.status_add a:hover{	
+.task__status_add___ebHFh a:hover{	
 	color: #ffffff;
 	text-decoration: none;
 }
 
-.filter{
+.task__filter___1ZLII{
     padding-top: 55px;
 }
 
-.filter_search {
+.task__filter_search___2-yfN {
 	padding-left: 40px;
 }
 
-.filter_checkbox {
+.task__filter_checkbox___2ur2G {
 	padding-top: 5px;
 	height: 35px;
     float: left;
@@ -266,6 +268,7 @@ input[type="checkbox"] {
 	outline:none;	
 	box-sizing:border-box;
 	display:inline-block;
+    padding-left: 0px;
 }
 input[type="checkbox"]:checked:before {
 	content: "";
@@ -279,7 +282,7 @@ input[type="checkbox"]:checked:before {
     pointer-events: none;
 }
 
-.filter_checkbox label {
+.task__filter_checkbox___2ur2G label {
 	line-height: 15px;
 	position: relative;
     bottom: 2px;
@@ -291,11 +294,11 @@ input[type="checkbox"]:checked:before {
     padding-right: 25px;
 }
 
-.filter_name {
+.task__filter_name___16NKH {
 	padding-top: 4px;
 }
 
-.filter_name a {
+.task__filter_name___16NKH a {
 	color: #222222;
     font-family: "PT Sans";
     text-decoration: none;
@@ -303,20 +306,20 @@ input[type="checkbox"]:checked:before {
 
 }
 
-.filter_name a::after {
+.task__filter_name___16NKH a::after {
 	content: "\25BE";
       font-size: 16px; 
       color: #999999;
      transition: all .3s;
 }
 
-.filter_name a:hover::after {
+.task__filter_name___16NKH a:hover::after {
 	color: #ff6633;
 }
 
 
 
-.table>thead>tr>th {
+.task__table___3jwmo>thead>tr>th {
     vertical-align: bottom;
     border-bottom: 1px solid #dddddd;
     color: #cccccc;
@@ -326,7 +329,7 @@ input[type="checkbox"]:checked:before {
 
 }
 
-.table>tbody>tr>td {
+.task__table___3jwmo>tbody>tr>td {
     vertical-align: middle;    
     color: #222222;
     font-family: "PT Sans";
@@ -334,8 +337,52 @@ input[type="checkbox"]:checked:before {
     font-size: 16px;
     min-width: 20%;
 }
-.tasks {
+.task__tasks___1H9iT {
 	padding-top: 40px;
     padding-left: 50px;
     padding-right: 50px;
 }
+
+.balance__title___2baCO {
+	margin-top: 10px;
+    margin-left: 40px;    
+    display: inline-block;    
+    font-family: "PT Sans";
+    font-size: 24px;
+	color: #222222;	
+}
+
+
+
+.company__title___2JTs0 {
+	margin-top: 10px;
+    margin-left: 40px;    
+    display: inline-block;    
+    font-family: "PT Sans";
+    font-size: 24px;
+	color: #222222;	
+}
+
+
+
+.finance__title___2p2Fm {
+	margin-top: 10px;
+    margin-left: 40px;    
+    display: inline-block;    
+    font-family: "PT Sans";
+    font-size: 24px;
+	color: #222222;	
+}
+
+
+
+.statistic__title___2EVlX {
+	margin-top: 10px;
+    margin-left: 40px;    
+    display: inline-block;    
+    font-family: "PT Sans";
+    font-size: 24px;
+	color: #222222;	
+}
+
+

@@ -1,30 +1,30 @@
 <header>
-	<div class="container header">
+	<div class="container {{css.header}}">
 	<div class="row">
 	<div class="col-lg-7">
-	    <div class="logo">
+	    <div class="{{css.logo}}">
 	       <a href="#">taskon</a>
 	    </div>
-	    <div class="menu">		
-		<a class="menu_item" ng-class="{menu_item__active: $route.current.activetab == 'task'}" href="#!/">Задания</a>
-		<a class="menu_item" ng-class="{menu_item__active: $route.current.activetab == 'finance'}" href="#!/finance">Финансы</a>
-		<a class="menu_item" ng-class="{menu_item__active: $route.current.activetab == 'company'}" href="#!/company">Компания</a>
-		<a class="menu_item" ng-class="{menu_item__active: $route.current.activetab == 'statistic'}" href="#!/statistic">Статистика</a>
+	    <div class="{{css.menu}}">		
+		<a class="{{css.menu_item}}" ng-class="{'{{css.menu_item__active}}': $route.current.activetab == 'task'}" href="#!/">Задания</a>
+		<a class="{{css.menu_item}}" ng-class="{'{{css.menu_item__active}}': $route.current.activetab == 'finance'}" href="#!/finance">Финансы</a>
+		<a class="{{css.menu_item}}" ng-class="{'{{css.menu_item__active}}': $route.current.activetab == 'company'}" href="#!/company">Компания</a>
+		<a class="{{css.menu_item}}" ng-class="{'{{css.menu_item__active}}': $route.current.activetab == 'statistic'}" href="#!/statistic">Статистика</a>
 		</div>	
     </div>
     <div class="col-lg-5">
-	    <div class="user">
-			<div class="user_balance">
+	    <div class="{{css.user}}">
+			<div class="{{css.user_balance}}">
 			   <span>Баланс</span>&nbsp;&nbsp;
 			   <a href="#!/balance">218 982, 90 </a>
 			</div>
-			<div class="user_notification">
+			<div class="{{css.user_notification}}">
 				<a href="#"><img src="../../assets/ic-notifications-black-24-px.png"></a>
 			</div>
-			<div class="user_name">
+			<div class="{{css.user_name}}">
 				<a href="#">Никита Ласточкин&nbsp;&nbsp;</a>
 			</div>
-			<div class="user_help">
+			<div class="{{css.user_help}}">
 				<a href="#"><img src="../../assets/ic-help-outline-24-px-copy-3.png"></a>
 			</div>			       
 	    </div>	

@@ -2,7 +2,6 @@
 
 import angular from 'angular';
 import angularRoute from 'angular-route';
-import css from './style/main.css';
 
 import Nav from './templates/nav/nav.component';
 import Task from './templates/task/task.component';

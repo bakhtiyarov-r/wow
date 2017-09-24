@@ -1,4 +1,5 @@
 "use strict";
+import css from './task.css';
 
 export default function Task(app){
 	app.component('taskComponent', {
@@ -10,6 +11,7 @@ export default function Task(app){
          $scope.getCount = function(val){         
              return filterFilter( $scope.myData, {status: val}).length;      
            };
+         $scope.css = css;
          
        });      
     

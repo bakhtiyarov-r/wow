@@ -2,43 +2,43 @@
 	<div class="container">
 	  <div class="row">
 	  	<div class="col-lg-1">
-	  	<div class="title">
+	  	<div class="{{css.title}}">
 	  	  <h2 >Задания</h2>
 	  	</div>
 	  	</div>
 	  </div>
-	  <div class="row divider">
+	  <div class="row {{css.divider}">
 	  	<div class="col-lg-10">
-	  	<div class="status">
-	  		<span class="status_item" ng-click="myFilter = {new: true}" href="#" >Новые <span class="status_count" >&nbsp; {{getCount({new: true})}}&nbsp;</span></span>
-		    <span class="status_item" ng-click="myFilter = {onthe_go: true}" href="#">В работе <span class="status_count">&nbsp;{{getCount({onthe_go: true})}}&nbsp;</span></span>
-		    <span class="status_item" ng-click="myFilter = {under_consideration: true}" href="#">На рассмотрении <span class="status_count">&nbsp;{{getCount({under_consideration: true})}}&nbsp;</span></span>
-		    <span class="status_item" ng-click="myFilter = {done: true}" href="#">Выполнены <span class="status_count">&nbsp;{{getCount({done: true})}}&nbsp;</span></span>
-		    <span class="status_item" ng-click="myFilter = {canceled: true}" href="#">Отменены <span class="status_count">&nbsp;{{getCount({canceled: true})}}&nbsp;</span></span>
-		    <span class="status_item" ng-click="myFilter = {drafts: true}" href="#">Черновики <span class="status_count">&nbsp;{{getCount({drafts: true})}}&nbsp;</span></span>
+	  	<div class="{{css.status}}">
+	  		<span class="{{css.status_item}}" ng-click="myFilter = {new: true}" href="#" >Новые <span class="{{css.status_count}}" >&nbsp; {{getCount({new: true})}}&nbsp;</span></span>
+		    <span class="{{css.status_item}}" ng-click="myFilter = {onthe_go: true}" href="#">В работе <span class="{{css.status_count}}">&nbsp;{{getCount({onthe_go: true})}}&nbsp;</span></span>
+		    <span class="{{css.status_item}}" ng-click="myFilter = {under_consideration: true}" href="#">На рассмотрении <span class="{{css.status_count}}">&nbsp;{{getCount({under_consideration: true})}}&nbsp;</span></span>
+		    <span class="{{css.status_item}}" ng-click="myFilter = {done: true}" href="#">Выполнены <span class="{{css.status_count}}">&nbsp;{{getCount({done: true})}}&nbsp;</span></span>
+		    <span class="{{css.status_item}}" ng-click="myFilter = {canceled: true}" href="#">Отменены <span class="{{css.status_count}}">&nbsp;{{getCount({canceled: true})}}&nbsp;</span></span>
+		    <span class="{{css.status_item}}" ng-click="myFilter = {drafts: true}" href="#">Черновики <span class="{{css.status_count}}">&nbsp;{{getCount({drafts: true})}}&nbsp;</span></span>
 		</div>
 		</div>
 		<div class="col-lg-2">
-			<div class="status_add"><a href="#"></a></div>
+			<div class="{{css.status_add}}"><a href="#"></a></div>
 		</div>
 	  </div>	
 	</div>		
 	</section>
 	<section>
-	   <div class="container filter">
+	   <div class="container {{css.filter}}">
 	      <div class="row">
 	         <div class="col-lg-3">
-	            <div class="filter_search">
+	            <div class="{{css.filter_search}}">
 	         	<input type="text" name="" ng-model="search" placeholder="Поиск по слову">
 	         	</div>
 	         </div>
 	         <div class="col-lg-6">
-	            <div class="filter_checkbox">
+	            <div class="{{css.filter_checkbox}}">
 	            <input type="checkbox" hidden ng-model="val" /><label> Персональное</label>
 	            <input type="checkbox" hidden ng-model="val1"/><label> Ночное</label>
 	            <input type="checkbox" hidden ng-model="val2"/><label> Срочное</label>	            
 	            </div>     	
-	            <div class="filter_name">
+	            <div class="{{css.filter_name}}">
 				  <a href="#" >Никита Ласточкин&nbsp;&nbsp;</a>
 			    </div>
 	         </div>  	
@@ -47,8 +47,8 @@
 	</section>
 
 	<section>
-		<div class="container tasks">
-			<table class="table tasks_item">
+		<div class="container {{css.tasks}}">
+			<table class="table {{css.table}}">
             <thead>
                 <tr>
                     <th>ID</th>

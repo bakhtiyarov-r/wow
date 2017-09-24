@@ -78,11 +78,7 @@ var _angularRoute = __webpack_require__(3);
 
 var _angularRoute2 = _interopRequireDefault(_angularRoute);
 
-var _main = __webpack_require__(5);
-
-var _main2 = _interopRequireDefault(_main);
-
-var _nav = __webpack_require__(6);
+var _nav = __webpack_require__(5);
 
 var _nav2 = _interopRequireDefault(_nav);
 
@@ -90,23 +86,23 @@ var _task = __webpack_require__(10);
 
 var _task2 = _interopRequireDefault(_task);
 
-var _balance = __webpack_require__(12);
+var _balance = __webpack_require__(13);
 
 var _balance2 = _interopRequireDefault(_balance);
 
-var _company = __webpack_require__(14);
+var _company = __webpack_require__(16);
 
 var _company2 = _interopRequireDefault(_company);
 
-var _finance = __webpack_require__(16);
+var _finance = __webpack_require__(19);
 
 var _finance2 = _interopRequireDefault(_finance);
 
-var _statistic = __webpack_require__(18);
+var _statistic = __webpack_require__(22);
 
 var _statistic2 = _interopRequireDefault(_statistic);
 
-var _router = __webpack_require__(20);
+var _router = __webpack_require__(25);
 
 var _router2 = _interopRequireDefault(_router);
 
@@ -19295,12 +19291,6 @@ module.exports = 'ngRoute';
 
 /***/ }),
 /* 5 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19310,17 +19300,35 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 exports.default = Nav;
+
+var _nav = __webpack_require__(6);
+
+var _nav2 = _interopRequireDefault(_nav);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function Nav(app) {
 	app.component('navComponent', {
-		template: __webpack_require__(7)
+		template: __webpack_require__(7),
+		controller: function controller($scope, $route) {
+			$scope.$route = $route;
+			$scope.css = _nav2.default;
+		}
 	});
 }
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"header":"nav__header___27Vuu","menu":"nav__menu___20IwW","logo":"nav__logo___EjnXn","menu_item":"nav__menu_item___redDU","menu_item__active":"nav__menu_item__active___2ZlrU","user":"nav__user___2DQpI","user_balance":"nav__user_balance___1-DvY","user_notification":"nav__user_notification___142Pq","user_name":"nav__user_name___2KXT-","user_help":"nav__user_help___1ts53"};
 
 /***/ }),
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<header>\r\n\t<div class=\"container header\">\r\n\t<div class=\"row\">\r\n\t<div class=\"col-lg-7\">\r\n\t    <div class=\"logo\">\r\n\t       <a href=\"#\">taskon</a>\r\n\t    </div>\r\n\t    <div class=\"menu\">\t\t\r\n\t\t<a class=\"menu_item\" ng-class=\"{menu_item__active: $route.current.activetab == 'task'}\" href=\"#!/\">Задания</a>\r\n\t\t<a class=\"menu_item\" ng-class=\"{menu_item__active: $route.current.activetab == 'finance'}\" href=\"#!/finance\">Финансы</a>\r\n\t\t<a class=\"menu_item\" ng-class=\"{menu_item__active: $route.current.activetab == 'company'}\" href=\"#!/company\">Компания</a>\r\n\t\t<a class=\"menu_item\" ng-class=\"{menu_item__active: $route.current.activetab == 'statistic'}\" href=\"#!/statistic\">Статистика</a>\r\n\t\t</div>\t\r\n    </div>\r\n    <div class=\"col-lg-5\">\r\n\t    <div class=\"user\">\r\n\t\t\t<div class=\"user_balance\">\r\n\t\t\t   <span>Баланс</span>&nbsp;&nbsp;\r\n\t\t\t   <a href=\"#!/balance\">218 982, 90 </a>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"user_notification\">\r\n\t\t\t\t<a href=\"#\"><img src=\"" + __webpack_require__(8) + "\"></a>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"user_name\">\r\n\t\t\t\t<a href=\"#\">Никита Ласточкин&nbsp;&nbsp;</a>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"user_help\">\r\n\t\t\t\t<a href=\"#\"><img src=\"" + __webpack_require__(9) + "\"></a>\r\n\t\t\t</div>\t\t\t       \r\n\t    </div>\t\r\n\t</div>\r\n\t</div>\r\n\t</div>\r\n\t</header>\r\n\t<div ng-view></div>";
+module.exports = "<header>\r\n\t<div class=\"container {{css.header}}\">\r\n\t<div class=\"row\">\r\n\t<div class=\"col-lg-7\">\r\n\t    <div class=\"{{css.logo}}\">\r\n\t       <a href=\"#\">taskon</a>\r\n\t    </div>\r\n\t    <div class=\"{{css.menu}}\">\t\t\r\n\t\t<a class=\"{{css.menu_item}}\" ng-class=\"{'{{css.menu_item__active}}': $route.current.activetab == 'task'}\" href=\"#!/\">Задания</a>\r\n\t\t<a class=\"{{css.menu_item}}\" ng-class=\"{'{{css.menu_item__active}}': $route.current.activetab == 'finance'}\" href=\"#!/finance\">Финансы</a>\r\n\t\t<a class=\"{{css.menu_item}}\" ng-class=\"{'{{css.menu_item__active}}': $route.current.activetab == 'company'}\" href=\"#!/company\">Компания</a>\r\n\t\t<a class=\"{{css.menu_item}}\" ng-class=\"{'{{css.menu_item__active}}': $route.current.activetab == 'statistic'}\" href=\"#!/statistic\">Статистика</a>\r\n\t\t</div>\t\r\n    </div>\r\n    <div class=\"col-lg-5\">\r\n\t    <div class=\"{{css.user}}\">\r\n\t\t\t<div class=\"{{css.user_balance}}\">\r\n\t\t\t   <span>Баланс</span>&nbsp;&nbsp;\r\n\t\t\t   <a href=\"#!/balance\">218 982, 90 </a>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"{{css.user_notification}}\">\r\n\t\t\t\t<a href=\"#\"><img src=\"" + __webpack_require__(8) + "\"></a>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"{{css.user_name}}\">\r\n\t\t\t\t<a href=\"#\">Никита Ласточкин&nbsp;&nbsp;</a>\r\n\t\t\t</div>\r\n\t\t\t<div class=\"{{css.user_help}}\">\r\n\t\t\t\t<a href=\"#\"><img src=\"" + __webpack_require__(9) + "\"></a>\r\n\t\t\t</div>\t\t\t       \r\n\t    </div>\t\r\n\t</div>\r\n\t</div>\r\n\t</div>\r\n\t</header>\r\n\t<div ng-view></div>";
 
 /***/ }),
 /* 8 */
@@ -19345,9 +19353,16 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = Task;
+
+var _task = __webpack_require__(11);
+
+var _task2 = _interopRequireDefault(_task);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function Task(app) {
   app.component('taskComponent', {
-    template: __webpack_require__(11),
+    template: __webpack_require__(12),
     controller: function controller($scope, $http, filterFilter) {
       $http.get('task.json').then(function (response) {
         $scope.myData = response.data.task;
@@ -19355,6 +19370,7 @@ function Task(app) {
         $scope.getCount = function (val) {
           return filterFilter($scope.myData, { status: val }).length;
         };
+        $scope.css = _task2.default;
       });
     }
   });
@@ -19364,10 +19380,17 @@ function Task(app) {
 /* 11 */
 /***/ (function(module, exports) {
 
-module.exports = "\t<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"title\">\r\n\t  \t  <h2 >Задания</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  <div class=\"row divider\">\r\n\t  \t<div class=\"col-lg-10\">\r\n\t  \t<div class=\"status\">\r\n\t  \t\t<span class=\"status_item\" ng-click=\"myFilter = {new: true}\" href=\"#\" >Новые <span class=\"status_count\" >&nbsp; {{getCount({new: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"status_item\" ng-click=\"myFilter = {onthe_go: true}\" href=\"#\">В работе <span class=\"status_count\">&nbsp;{{getCount({onthe_go: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"status_item\" ng-click=\"myFilter = {under_consideration: true}\" href=\"#\">На рассмотрении <span class=\"status_count\">&nbsp;{{getCount({under_consideration: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"status_item\" ng-click=\"myFilter = {done: true}\" href=\"#\">Выполнены <span class=\"status_count\">&nbsp;{{getCount({done: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"status_item\" ng-click=\"myFilter = {canceled: true}\" href=\"#\">Отменены <span class=\"status_count\">&nbsp;{{getCount({canceled: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"status_item\" ng-click=\"myFilter = {drafts: true}\" href=\"#\">Черновики <span class=\"status_count\">&nbsp;{{getCount({drafts: true})}}&nbsp;</span></span>\r\n\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"col-lg-2\">\r\n\t\t\t<div class=\"status_add\"><a href=\"#\"></a></div>\r\n\t\t</div>\r\n\t  </div>\t\r\n\t</div>\t\t\r\n\t</section>\r\n\t<section>\r\n\t   <div class=\"container filter\">\r\n\t      <div class=\"row\">\r\n\t         <div class=\"col-lg-3\">\r\n\t            <div class=\"filter_search\">\r\n\t         \t<input type=\"text\" name=\"\" ng-model=\"search\" placeholder=\"Поиск по слову\">\r\n\t         \t</div>\r\n\t         </div>\r\n\t         <div class=\"col-lg-6\">\r\n\t            <div class=\"filter_checkbox\">\r\n\t            <input type=\"checkbox\" hidden ng-model=\"val\" /><label> Персональное</label>\r\n\t            <input type=\"checkbox\" hidden ng-model=\"val1\"/><label> Ночное</label>\r\n\t            <input type=\"checkbox\" hidden ng-model=\"val2\"/><label> Срочное</label>\t            \r\n\t            </div>     \t\r\n\t            <div class=\"filter_name\">\r\n\t\t\t\t  <a href=\"#\" >Никита Ласточкин&nbsp;&nbsp;</a>\r\n\t\t\t    </div>\r\n\t         </div>  \t\r\n\t      </div>  \t\r\n\t   </div>\t\r\n\t</section>\r\n\r\n\t<section>\r\n\t\t<div class=\"container tasks\">\r\n\t\t\t<table class=\"table tasks_item\">\r\n            <thead>\r\n                <tr>\r\n                    <th>ID</th>\r\n                    <th >Город</th>\r\n                    <th>Название</th>\r\n                    <th>Выполнить до</th>\r\n                    <th>Сумма</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr ng-repeat=\"data in myData | filter: {status:myFilter, task_name:search, filter:{personal:val || NULL, night:val1 || NULL, immediate:val2 || NULL}}\">\r\n                    <td >{{ data.ID }}</td>\r\n                    <td >{{ data.city_name }}</td>\r\n                    <td width=\"50%\">{{ data.task_name }} </td>\r\n                    <td>{{ data.deadline }}</td>\r\n                    <td>{{ data.sum }}</td>\r\n                </tr>\r\n                \r\n            </tbody>\r\n        </table>\r\n\t\t</div>\r\n\t</section>\r\n";
+// removed by extract-text-webpack-plugin
+module.exports = {"title":"task__title___2DVvj","status":"task__status___1Rf39","status_item":"task__status_item___exk0z","status_count":"task__status_count___1rKag","divider":"task__divider___1gx1p","status_add":"task__status_add___ebHFh","filter":"task__filter___1ZLII","filter_search":"task__filter_search___2-yfN","filter_checkbox":"task__filter_checkbox___2ur2G","filter_name":"task__filter_name___16NKH","table":"task__table___3jwmo","tasks":"task__tasks___1H9iT"};
 
 /***/ }),
 /* 12 */
+/***/ (function(module, exports) {
+
+module.exports = "\t<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"{{css.title}}\">\r\n\t  \t  <h2 >Задания</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  <div class=\"row {{css.divider}\">\r\n\t  \t<div class=\"col-lg-10\">\r\n\t  \t<div class=\"{{css.status}}\">\r\n\t  \t\t<span class=\"{{css.status_item}}\" ng-click=\"myFilter = {new: true}\" href=\"#\" >Новые <span class=\"{{css.status_count}}\" >&nbsp; {{getCount({new: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"{{css.status_item}}\" ng-click=\"myFilter = {onthe_go: true}\" href=\"#\">В работе <span class=\"{{css.status_count}}\">&nbsp;{{getCount({onthe_go: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"{{css.status_item}}\" ng-click=\"myFilter = {under_consideration: true}\" href=\"#\">На рассмотрении <span class=\"{{css.status_count}}\">&nbsp;{{getCount({under_consideration: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"{{css.status_item}}\" ng-click=\"myFilter = {done: true}\" href=\"#\">Выполнены <span class=\"{{css.status_count}}\">&nbsp;{{getCount({done: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"{{css.status_item}}\" ng-click=\"myFilter = {canceled: true}\" href=\"#\">Отменены <span class=\"{{css.status_count}}\">&nbsp;{{getCount({canceled: true})}}&nbsp;</span></span>\r\n\t\t    <span class=\"{{css.status_item}}\" ng-click=\"myFilter = {drafts: true}\" href=\"#\">Черновики <span class=\"{{css.status_count}}\">&nbsp;{{getCount({drafts: true})}}&nbsp;</span></span>\r\n\t\t</div>\r\n\t\t</div>\r\n\t\t<div class=\"col-lg-2\">\r\n\t\t\t<div class=\"{{css.status_add}}\"><a href=\"#\"></a></div>\r\n\t\t</div>\r\n\t  </div>\t\r\n\t</div>\t\t\r\n\t</section>\r\n\t<section>\r\n\t   <div class=\"container {{css.filter}}\">\r\n\t      <div class=\"row\">\r\n\t         <div class=\"col-lg-3\">\r\n\t            <div class=\"{{css.filter_search}}\">\r\n\t         \t<input type=\"text\" name=\"\" ng-model=\"search\" placeholder=\"Поиск по слову\">\r\n\t         \t</div>\r\n\t         </div>\r\n\t         <div class=\"col-lg-6\">\r\n\t            <div class=\"{{css.filter_checkbox}}\">\r\n\t            <input type=\"checkbox\" hidden ng-model=\"val\" /><label> Персональное</label>\r\n\t            <input type=\"checkbox\" hidden ng-model=\"val1\"/><label> Ночное</label>\r\n\t            <input type=\"checkbox\" hidden ng-model=\"val2\"/><label> Срочное</label>\t            \r\n\t            </div>     \t\r\n\t            <div class=\"{{css.filter_name}}\">\r\n\t\t\t\t  <a href=\"#\" >Никита Ласточкин&nbsp;&nbsp;</a>\r\n\t\t\t    </div>\r\n\t         </div>  \t\r\n\t      </div>  \t\r\n\t   </div>\t\r\n\t</section>\r\n\r\n\t<section>\r\n\t\t<div class=\"container {{css.tasks}}\">\r\n\t\t\t<table class=\"table {{css.table}}\">\r\n            <thead>\r\n                <tr>\r\n                    <th>ID</th>\r\n                    <th >Город</th>\r\n                    <th>Название</th>\r\n                    <th>Выполнить до</th>\r\n                    <th>Сумма</th>\r\n                </tr>\r\n            </thead>\r\n            <tbody>\r\n                <tr ng-repeat=\"data in myData | filter: {status:myFilter, task_name:search, filter:{personal:val || NULL, night:val1 || NULL, immediate:val2 || NULL}}\">\r\n                    <td >{{ data.ID }}</td>\r\n                    <td >{{ data.city_name }}</td>\r\n                    <td width=\"50%\">{{ data.task_name }} </td>\r\n                    <td>{{ data.deadline }}</td>\r\n                    <td>{{ data.sum }}</td>\r\n                </tr>\r\n                \r\n            </tbody>\r\n        </table>\r\n\t\t</div>\r\n\t</section>\r\n";
+
+/***/ }),
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19377,40 +19400,34 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 exports.default = Balance;
+
+var _balance = __webpack_require__(14);
+
+var _balance2 = _interopRequireDefault(_balance);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function Balance(app) {
 	app.component('balanceComponent', {
-		template: __webpack_require__(13)
+		template: __webpack_require__(15),
+		controller: function controller($scope) {
+			$scope.css = _balance2.default;
+		}
 	});
 }
-
-/***/ }),
-/* 13 */
-/***/ (function(module, exports) {
-
-module.exports = "<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"title\">\r\n\t  \t  <h2 >Баланс</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  \r\n\t</section>";
 
 /***/ }),
 /* 14 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-exports.default = Company;
-function Company(app) {
-	app.component('companyComponent', {
-		template: __webpack_require__(15)
-	});
-}
+// removed by extract-text-webpack-plugin
+module.exports = {"title":"balance__title___2baCO"};
 
 /***/ }),
 /* 15 */
 /***/ (function(module, exports) {
 
-module.exports = "<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"title\">\r\n\t  \t  <h2 >Компания</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  \r\n\t</section>";
+module.exports = "<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"{{css.title}}\">\r\n\t  \t  <h2 >Баланс</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  \r\n\t</section>";
 
 /***/ }),
 /* 16 */
@@ -19422,10 +19439,20 @@ module.exports = "<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"r
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
-exports.default = Finance;
-function Finance(app) {
-	app.component('financeComponent', {
-		template: __webpack_require__(17)
+exports.default = Company;
+
+var _company = __webpack_require__(17);
+
+var _company2 = _interopRequireDefault(_company);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Company(app) {
+	app.component('companyComponent', {
+		template: __webpack_require__(18),
+		controller: function controller($scope) {
+			$scope.css = _company2.default;
+		}
 	});
 }
 
@@ -19433,10 +19460,57 @@ function Finance(app) {
 /* 17 */
 /***/ (function(module, exports) {
 
-module.exports = "<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"title\">\r\n\t  \t  <h2 >Финансы</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  \r\n\t</section>";
+// removed by extract-text-webpack-plugin
+module.exports = {"title":"company__title___2JTs0"};
 
 /***/ }),
 /* 18 */
+/***/ (function(module, exports) {
+
+module.exports = "<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"{{css.title}}\">\r\n\t  \t  <h2 >Компания</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  \r\n\t</section>";
+
+/***/ }),
+/* 19 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.default = Finance;
+
+var _finance = __webpack_require__(20);
+
+var _finance2 = _interopRequireDefault(_finance);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function Finance(app) {
+	app.component('financeComponent', {
+		template: __webpack_require__(21),
+		controller: function controller($scope) {
+			$scope.css = _finance2.default;
+		}
+	});
+}
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+module.exports = {"title":"finance__title___2p2Fm"};
+
+/***/ }),
+/* 21 */
+/***/ (function(module, exports) {
+
+module.exports = "<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"{{css.title}}\">\r\n\t  \t  <h2 >Финансы</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  \r\n\t</section>";
+
+/***/ }),
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19446,45 +19520,67 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 exports.default = Statistic;
+
+var _statistic = __webpack_require__(23);
+
+var _statistic2 = _interopRequireDefault(_statistic);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function Statistic(app) {
 	app.component('statisticComponent', {
-		template: __webpack_require__(19)
+		template: __webpack_require__(24),
+		controller: function controller($scope) {
+			$scope.css = _statistic2.default;
+		}
 	});
 }
 
 /***/ }),
-/* 19 */
+/* 23 */
 /***/ (function(module, exports) {
 
-module.exports = "<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"title\">\r\n\t  \t  <h2 >Статистика</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  \r\n\t</section>";
+// removed by extract-text-webpack-plugin
+module.exports = {"title":"statistic__title___2EVlX"};
 
 /***/ }),
-/* 20 */
+/* 24 */
+/***/ (function(module, exports) {
+
+module.exports = "<section>\r\n\t<div class=\"container\">\r\n\t  <div class=\"row\">\r\n\t  \t<div class=\"col-lg-1\">\r\n\t  \t<div class=\"{{css.title}}\">\r\n\t  \t  <h2 >Статистика</h2>\r\n\t  \t</div>\r\n\t  \t</div>\r\n\t  </div>\r\n\t  \r\n\t</section>";
+
+/***/ }),
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+           value: true
 });
 exports.default = Router;
 function Router(app) {
-    app.config(['$locationProvider', '$routeProvider', function config($locationProvider, $routeProvider) {
-        $locationProvider.hashPrefix('!');
+           app.config(['$locationProvider', '$routeProvider', function config($locationProvider, $routeProvider) {
+                      $locationProvider.hashPrefix('!');
 
-        $routeProvider.when('/', {
-            template: '<task-component></task-component>'
-        }).when('/finance', {
-            template: '<finance-component></finance-component>'
-        }).when('/company', {
-            template: '<company-component></company-component>'
-        }).when('/statistic', {
-            template: '<statistic-component></statistic-component>'
-        }).when('/balance', {
-            template: '<balance-component></balance-component>'
-        }).otherwise('/');
-    }]);
+                      $routeProvider.when('/', {
+                                 template: '<task-component></task-component>',
+                                 activetab: 'task'
+                      }).when('/finance', {
+                                 template: '<finance-component></finance-component>',
+                                 activetab: 'finance'
+                      }).when('/company', {
+                                 template: '<company-component></company-component>',
+                                 activetab: 'company'
+                      }).when('/statistic', {
+                                 template: '<statistic-component></statistic-component>',
+                                 activetab: 'statistic'
+                      }).when('/balance', {
+                                 template: '<balance-component></balance-component>',
+                                 activetab: 'balance'
+                      }).otherwise('/');
+           }]);
 };
 
 /***/ })
